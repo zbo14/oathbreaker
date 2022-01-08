@@ -40,7 +40,6 @@ const oath1 = Oath((resolve, reject, signal) => {
   }).once('error', reject)
 })
 
-
 const oath2 = Oath((resolve, reject, signal) => {
   // do some stuff
 
@@ -48,8 +47,6 @@ const oath2 = Oath((resolve, reject, signal) => {
 
   // do some other stuff
 })
-
-// ...
 ```
 
 ### `Oath.all()`
@@ -97,3 +94,15 @@ Oath.race([oath1, oath2, ... ])
     // others pending are canceled
   })
 ```
+
+## Test
+
+`npm test`
+
+## Lint
+
+`npm run lint` or `npm run lint:fix`
+
+## License
+
+Licensed under [MIT](./LICENSE).
