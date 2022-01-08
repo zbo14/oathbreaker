@@ -10,7 +10,7 @@ Cancel pending promises with ease!
 
 ## Usage
 
-**`Oath()`**
+### `Oath()`
 
 Create an `Oath` and break it:
 
@@ -52,7 +52,7 @@ const oath2 = Oath((resolve, reject, signal) => {
 // ...
 ```
 
-**`Oath.all()`**
+### `Oath.all()`
 
 Similar to `Promise.all()` except it breaks other oaths (i.e. cancels pending promises) when 1 rejects:
 
@@ -67,7 +67,7 @@ Oath.all([oath1, oath2, ... ])
   })
 ```
 
-**`Oath.any()`**
+### `Oath.any()`
 
 Similar to `Promise.any()` except it breaks other oaths when 1 resolves:
 
@@ -82,7 +82,7 @@ Oath.any([oath1, oath2, ... ])
   })
 ```
 
-**`Oath.race()`**
+### `Oath.race()`
 
 Similar to `Promise.race()` except it breaks others oaths when 1 resolves *or* rejects:
 
