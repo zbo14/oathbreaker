@@ -1,7 +1,7 @@
 {
   "name": "oathbreaker",
   "version": "0.0.1",
-  "description": "",
+  "description": "Cancel pending promises with ease",
   "main": "index.js",
   "scripts": {
     "lint": "standard",
