@@ -26,9 +26,9 @@ const oath = Oath((resolve, reject) => {
 setTimeout(() => oath.break(), 3e3)
 ```
 
-The callback return value should be falsy or a function. If a function's returned, it's called if/when the oath is broken.
+The executor function return value should be falsy or a function. If a function's returned, it's called if/when the oath is broken.
 
-The callback takes an optional 3rd argument. This is an [`AbortSignal`](https://nodejs.org/docs/latest-v16.x/api/globals.html#class-abortsignal), which can be passed to other methods (e.g. `https.request()`) or checked in business logic to see whether the oath was broken:
+The executor function takes an optional 3rd argument. This is an [`AbortSignal`](https://nodejs.org/docs/latest-v16.x/api/globals.html#class-abortsignal), which can be passed to other methods (e.g. `https.request()`) or checked in business logic to see whether the oath was broken:
 
 ```js
 const https = require('https')
@@ -81,7 +81,7 @@ Oath.any([oath1, oath2, ... ])
 
 ### `Oath.race()`
 
-Similar to `Promise.race()` except it breaks others oaths when 1 resolves *or* rejects:
+Similar to `Promise.race()` except it breaks other oaths when 1 resolves *or* rejects:
 
 ```js
 Oath.race([oath1, oath2, ... ])
